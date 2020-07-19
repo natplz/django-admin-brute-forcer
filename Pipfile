@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+lxml = "==4.*"
+	# Library for parsing XML and HTML
+requests = "==2.*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6.9"
